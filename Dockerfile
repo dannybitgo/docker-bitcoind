@@ -1,5 +1,5 @@
 FROM alpine
-LABEL MAINTAINER="James O'Beirne <james@chaincode.com>"
+LABEL MAINTAINER="Danny Diekroeger <danny@bitgo.com.com>"
 
 ARG VERSION=0.17.1
 ARG GLIBC_VERSION=2.28-r0
@@ -21,7 +21,7 @@ RUN apk update \
   && rm -rf /glibc-bin-${GLIBC_VERSION}.apk \
   && wget $DOWNLOAD_URL \
   && tar xzvf /bitcoin-${VERSION}-x86_64-linux-gnu.tar.gz \
-  && mkdir /root/.bitcoin \
+  && mkdir /bitcoin/.bitcoin \
   && mv /bitcoin-${VERSION}/bin/* /usr/local/bin/ \
   && rm -rf /bitcoin-${VERSION}/ \
   && rm -rf /bitcoin-${VERSION}-x86_64-linux-gnu.tar.gz \

@@ -2,7 +2,7 @@
 
 set -euo pipefail
 
-BITCOIN_DIR=/root/.bitcoin
+BITCOIN_DIR=/bitcoin/.bitcoin
 BITCOIN_CONF=${BITCOIN_DIR}/bitcoin.conf
 
 # If config doesn't exist, initialize with sane defaults for running a
