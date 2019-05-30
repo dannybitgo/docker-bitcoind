@@ -3,8 +3,6 @@ LABEL MAINTAINER="Danny Diekroeger <danny@bitgo.com.com>"
 
 ARG VERSION=0.17.1
 ARG GLIBC_VERSION=2.28-r0
-ARG network
-ENV mynetwork $network
 
 ENV FILENAME bitcoin-${VERSION}-x86_64-linux-gnu.tar.gz
 ENV DOWNLOAD_URL https://bitcoin.org/bin/bitcoin-core-${VERSION}/${FILENAME}
@@ -34,7 +32,6 @@ EXPOSE 8332 8333 18332 18333 28332 28333
 
 ADD VERSION .
 ADD ./bin/docker_entrypoint.sh /usr/local/bin/docker_entrypoint.sh
-ADD ./secrets/${mynetwork}/ /
 RUN chmod a+x /usr/local/bin/docker_entrypoint.sh
 
 ENTRYPOINT ["/usr/local/bin/docker_entrypoint.sh"]
